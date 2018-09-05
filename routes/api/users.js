@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/key');
+const key = require('../../config/key');
 const passport = require('passport')
 //load input validation
 
@@ -34,6 +34,7 @@ router.post('/register', (req, res) => {
         errors.username = 'Username already exists';
         return res.status(400).json(errors);
       } else {//maybe console.log?
+        console.log('username doesnt exist')
 
   
         const newUser = new User({
@@ -69,7 +70,8 @@ router.post('/login', (req, res) => {
   .then(user => {
     //check for user
     if(!user) {
-      return res.status(404).json({username: 'Username not found'});
+      errors.username = 'user not found'
+      return res.status(404).json(errors);
     }
 
     //check password
@@ -78,11 +80,11 @@ router.post('/login', (req, res) => {
       if(isMatch){
        //user matched
        //payload
-       const payload = {  id: user.id, name: user.username } //create jwt payload
+       const payload = {  id: user.id, username: user.username } //create jwt payload
        //sign token
        jwt.sign(
          payload, 
-         keys.secret, 
+         key.secretOrKey, 
          { expiresIn: 3600 }, 
          (err, token) => {
            res.json({
@@ -102,8 +104,13 @@ router.post('/login', (req, res) => {
 //GET api/users/curren
 //return current user
 //private
-router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) =>{
-  res.json(req.user);
+router.get('/current', 
+passport.authenticate('jwt', { session: false }), 
+(req, res) => {
+  res.json({
+    id: req.user.id,
+    username: req.user.username
+  });
 })
 
 module.exports = router;
