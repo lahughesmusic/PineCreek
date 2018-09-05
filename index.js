@@ -1,49 +1,39 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const logger = require('morgan');
 const bodyParser = require('body-parser');
-
-mongoose.Promise = Promise;
-
-var Example = ('./userModel.js');
-
-var app = express();
+const passport = require('passport');
+// const passport = require('passport');
 
 const users = require('./routes/api/users');
-const post = require('./routes/api/post');
+const posts = require('./routes/api/post');
+
+const app = express();
+
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// DB Config
 
 
-app.use(logger('dev'));
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
+// Connect to MongoDB
+mongoose
+  .connect('mongodb://localhost:27017/pinecreek')
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err))
 
-app.use(express.static('public'));
+// Passport middleware
+app.use(passport.initialize());
 
-mongoose.connect("mongodb://<lahughesmusic>:<lahughesmusic87>@ds141932.mlab.com:41932/connector"); 
+// Passport Config
+require('./config/passport')(passport);
+// require('./config/passport')(passport);
 
-var db = mongoose.connection;
-
-db.on('error', function(error){
-    console.log('Mongoose Connection Successful.')
-});
-
-app.post('/submit', function(req, res){
-    var user = new Example(req.body);
-    user.save(function(error, doc){
-        if(error){
-            res.send(error);
-        }
-        else{
-            res.send(doc);
-        }
-    })
-})
-
-app.get('/', (req, res) => res.send("hello world"));
-//USE ROUTES
+// Use Routes
 app.use('/api/users', users);
-app.use('/api/post', post);
-const port = process.env.PORT || 5000;
+app.use('/api/post', posts);
+
+const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
