@@ -1,41 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 body{
   background: #1e5799; 
   background: -moz-linear-gradient(left, #04162a 0%, #1a629d 41%, #135895 100%, #466781 100%); 
   background: -webkit-linear-gradient(left, #03182f 0%,#2170b0 41%,#104471 100%,#5c98c6 100%); 
   background: linear-gradient(to right, #0b3464 0%,#1063a8 41%,#125793 100%,#355873 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); 
-
-
-
 }
 
 h1{
@@ -93,6 +61,17 @@ button{
   font-family: 'Special Elite', cursive;
   font-size: 15px;
 }
+
+#bottom{
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
+  
+}
+
 
 
 
