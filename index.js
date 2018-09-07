@@ -15,10 +15,10 @@ app.use(bodyParser.json());
 
 // DB Config
 
-
+const db = require('./config/key').mongoURI;
 // Connect to MongoDB
 mongoose
-  .connect('mongodb://localhost:27017/pinecreek')
+  .connect(db)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
 
