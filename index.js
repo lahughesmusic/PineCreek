@@ -13,6 +13,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+
 // DB Config
 
 const db = require('./config/key').mongoURI;
@@ -28,6 +30,7 @@ app.use(passport.initialize());
 // Passport Config
 require('./config/passport')(passport);
 // require('./config/passport')(passport);
+
 
 // Use Routes
 app.use('/api/users', users);

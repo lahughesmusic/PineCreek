@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import {loginUser } from '../../actions/authActions';
+import TextFieldGroup from '../common/TextFieldGroup'
 // import axios from 'axios';
 
 
@@ -16,14 +19,32 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-    e.preventDefault();
+  componentDidMount(){
+      if(this.props.auth.isAuthenticated){
+          this.props.history.push('/clue');
+      }
   }
 
-    // const user = {
-    //   email: this.state.username,
-    //   password: this.state.password
-    // };
+  componentWillReceiveProps(nextProps){
+      if(nextProps.auth.isAuthenticated){
+          this.props.history.push('/clue');
+      }
+      if(nextProps.errors){
+          this.setState({ errors: nextProps.errors});
+      }
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+  
+
+    const userData = {
+      username: this.state.username,
+      password: this.state.password
+    };
+
+    this.props.loginUser(userData);
+  }
 
    
   onChange(e) {
@@ -32,60 +53,51 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
+
     return (
-            <div className='register'>
- 
-                <div className='container'>
-                    <div className='row'>
-                    <div className='col-md-8 m-auto'>
-                    <h1 className='display-4 text-center'>Log In</h1>
-                    <p className='lead text-center'>
-                    Can you solve our town mystery? No time to waste!
-                    </p>
-                    <form onSubmit={this.onSubmit}>
+      <div className="login">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">We Appreciate Your Help</h1>
+              <p className="lead text-center">
+                Welcome Back, Please Tell Us You Name 
+              </p>
+              <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="Username"
+                  name="username"
+                  type="username"
+                  value={this.state.username}
+                  onChange={this.onChange}
+                  error={errors.username}
+                />
 
-                        <div className='form-group'>
-                        <input
-                        type='text'
-                        className={classnames('form-control form-control-lg', {
-                            'is-invalid': errors.username
-                        })}
-                        placeholder='Name'
-                        value={this.state.username}
-                        name='username'                        
-                        onChange={this.onChange}
-                        
-                        />
-                        </div>
-                        <div className='form-group'>
-                        <input
-                        type='password'
-                        className={classnames('form-control form-control-lg', {
-                            'is-invalid': errors.username
-                        })}
-                        placeholder='Password'
-                        value={this.state.password}
-                        name='password'
-                        onChange={this.onChange}
-
-                        
-                        />
-                   
-                        
-
-                        
-                        </div>
-                        <input type="submit" className="btn btn-info btn-block mt-4" />
-
-
-                    </form>
-                    </div>
-                    </div>
-                </div>
-                
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
+              </form>
             </div>
-        )
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Login;
+Login.propTypes = {
+    loginUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+})
+export default connect(mapStateToProps, { loginUser })(Login);
