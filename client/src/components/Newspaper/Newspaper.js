@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import "./Note.css";
-import "./resources/note.pdf";
+import "./Newspaper.css";
+import img from './newspaper.jpg';
 
-class Note extends Component {
+class Newspaper extends Component {
     
     render() { 
-        var madNote = <img className="madNote" type="pdf" alt="madNote" src="./resources/note.pdf" />;
+
         return (  
             <div>
-                {madNote};
+                <img src={img} />
+
             </div>
+            
         );
     }
 }
 
 
-export default Note;
+export default Newspaper;
 
 
 

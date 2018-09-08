@@ -1,6 +1,10 @@
-import React, { Component } from 'react'
-import classnames from 'classnames'
-import axios from 'axios'
+import React, { Component } from 'react';
+import classnames from 'classnames';
+import { connect } from 'react-redux';
+import { registerUser } from '../../actions/authActions';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 class Register extends Component {
     constructor() {
@@ -18,6 +22,18 @@ class Register extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+     componentDidMount(){
+      if(this.props.auth.isAuthenticated){
+          this.props.history.push('/clue');
+      }
+  }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.errors){
+            this.setState({errors: nextProps.errors});
+        }
+    }
+
     onSubmit(e){
         e.preventDefault();
 
@@ -28,78 +44,59 @@ class Register extends Component {
             password: this.state.password    
         };
 
-        axios
-            .post('/api/users/register', newUser)
-            .then(res => console.log(res.data))
-            .catch(err => this.setState({ errors: err.response.data}))
+            this.props.registerUser(newUser, this.props.history);
+     
     }
 
-    render() {
-        const { errors } = this.state;
+    
+  render() {
+    const { errors } = this.state;
 
-        return (         
-            <div className='register'>
- 
-                <div className='container'>
-                    <div className='row'>
-                    <div className='col-md-8 m-auto'>
-                    <h1 className='display-4 text-center'>Sign Up</h1>
-                    <p className='lead text-center'>
-                    Can you solve our town mystery? No time to waste!
-                    </p>
-                    <form onSubmit={this.onSubmit}>
+    return (
+      <div className="login">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Who Are You</h1>
+              <p className="lead text-center">
+                Sign in to your DevConnector account
+              </p>
+              <form onSubmit={this.onSubmit}>
+                <TextFieldGroup
+                  placeholder="Username"
+                  name="username"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.onChange}
+                  error={errors.username}
+                />
 
-
-
-
-                        {/* USERNAME */}
-                        <div className='form-group'>
-                        <input
-                        type='text'
-                        className={classnames('form-control form-control-lg', {
-                            'is-invalid': errors.username
-                        })}
-                        placeholder='Name'
-                        value={this.state.username}
-                        name='username'                        
-                        onChange={this.onChange}                       
-                        />
-                        {errors.username && (
-                        <div className="invalid-feedback">{errors.username}</div>
-                        )}
-                        </div>
-
-
-
-                        {/* PASSWORD */}
-                        <div className='form-group'>
-                        <input
-                        type='password'
-                        className={classnames('form-control form-control-lg', {
-                            'is-invalid': errors.password
-                        })}                        
-                        placeholder='Password'
-                        value={this.state.password}
-                        name='password'
-                        onChange={this.onChange}
-                            />
-                        {errors.password && (
-                        <div className="invalid-feedback">{errors.password}</div>
-                        )}
-                      
-                        </div>
-
-                        <input type="submit" className="btn btn-info btn-block mt-4" />
-
-
-                    </form>
-                    </div>
-                    </div>
-                </div>
-                
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
+                <input type="submit" className="btn btn-info btn-block mt-4" />
+              </form>
             </div>
-        )
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+Register.propTypes = {
+    registerUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+    errors: state.errors
+})
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Register));
