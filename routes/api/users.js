@@ -22,6 +22,9 @@ const User = require('../../server/models/User');
 // @access  Public
 router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
 
+
+
+
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -113,6 +116,8 @@ passport.authenticate('jwt', { session: false }),
     username: req.user.username
   });
 })
+
+
 
 
 

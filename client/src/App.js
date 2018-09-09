@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { setCurrentUser } from './actions/authActions'
 import { logoutUser } from './reducers/authReducer';
 import Newspaper from './components/Newspaper/index';
+import AngryNote from './components/AngryNote/index'
+import Keyboard from './components/Keyboard/Keyboard';
 
 
 
@@ -53,7 +55,11 @@ class App extends Component {
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} /> 
                 <Route path="/newspaper" component={Newspaper} />
-                </div>
+                <Route path="/angrynote" component={AngryNote} />           
+                <Route path="/keyboard" component={Keyboard} />
+                <Route path="/marionette" component={marionette} />
+            
+             </div>
                 
 
                 <Footer />
