@@ -24,7 +24,7 @@ class Register extends Component {
 
      componentDidMount(){
       if(this.props.auth.isAuthenticated){
-          this.props.history.push('/clue');
+          this.props.history.push('/newspaper');
       }
   }
 
