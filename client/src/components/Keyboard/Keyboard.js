@@ -1,27 +1,61 @@
 import React, { Component } from 'react';
 import './Keyboard.css';
-
+import { Redirect } from 'react-router-dom'
 
 
 class Keyboard extends Component {
-constructor(){
+constructor(props){
   super();
   this.state = {
-    isPlayed: false
+   inputValue: ''
+   
     
   };
-
-  
-}  
-
-componentWillReceiveProps() {
-  if(this.state.isPlayed){
-  }
 }
 
 
 
+updateInputValue(evt) {
+    this.setState({
+      inputValue: evt.target.value
+    });
+  }
+
+handleKeyPress = (event) => {
+  
+  let face = document.querySelectorAll('li')
+  for  (let i = 0; i < face.length; i++){
+    face[i].addEventListener('click', function(){
+      const pressed = document.getElementById('pressed');
+      pressed.name += this.name + '|';
+      console.log(pressed.name)
+      
+      if(pressed.length >= 8){      
+        if (pressed.name== 'FACE'){
+        
+            this.Redirect('/marionette');
+                }else{
+                  console.log(pressed.name)
+        
+  }
+ }else{
+   console.log(pressed.name)
+ }
+})
+}
+}
+
+
 render(){
+  
+
+  
+
+
+
+
+
+
 
 const ol = {
   position: "relative",
@@ -123,37 +157,33 @@ const liEbonyActive = {
   color: "white"
 }
 
-const liWhite = [{li} + {liHover} + {liActive}];
-const liBlack = [{liEbony} + {liEbonyHover} + {liEbonyActive}];
-
-
-  return(
+return(
 <div className="page">
 <h1>Find My Face</h1>
 
 
-  
-<ol className="scale-1">
-  <li isPlayed={this.state.isPlayed}className="white key" value="3" data-note="c" >C</li>
-  <li data-note="cs" className="ebony key">C# D♭</li>
-  <li data-note="d" className="white key">D</li>
-  <li data-note="ds" className="ebony key">D# E♭</li>
-  <li isPlayed={this.state.isPlayed}className="white key"value="4" data-note="e">E</li>
-  <li isPlayed={this.state.isPlayed}className="white key"value="1" data-note="f">F</li>
-  <li data-note="fs" className="ebony key">F# G♭</li>
-  <li data-note="g" className="white key">G</li>
-  <li data-note="gs" className="ebony key">G# A♭</li>
-  <li isPlayed={this.state.isPlayed} className="white key"value="2" data-note="a">A</li>
-  <li data-note="as" className="ebony key">A# B♭</li>
-  <li data-note="b" className="ebony key">B</li>
-  <li isPlayed={this.state.isPlayed} className="white key"value="3" data-note="a">C</li>
-</ol> 
+<input id='input'onChange={this.handleKeyPress} value={this.value} onChange={evt => this.updateInputValue(evt)} type='text' />
+<ol id='buttons' onClick={this.handleKeyPress}className="scale-1">
+  <li id='pressed'className="white key"name={'C'} datanote="c" >C</li>
+  <li id='pressed'datanote="cs" name={''}className="ebony key">C# D♭</li>
+  <li id='pressed'datanote="d" value={'d'}className="white key">D</li>
+  <li id='pressed'datanote="ds" value={this.datanote}className="ebony key">D# E♭</li>
+  <li id='pressed'className="white key"name={'E'} datanote="e">E</li>
+  <li id='pressed'className="white key"name={'F'}  datanote="f">F</li>
+  <li id='pressed'datanote="fs"name={this.datanote}className="ebony key">F# G♭</li>
+  <li id='pressed'datanote="g" value={this.datanote}className="white key">G</li>
+  <li id='pressed'datanote="gs" value={this.datanote}className="ebony key">G# A♭</li>
+  <li id='pressed'className="white key"name={'A'}  datanote="a">A</li>
+  <li id='pressed'datanote="as" value={this.datanote}className="ebony key">A# B♭</li>
+  <li id='pressed'datanote="b" value={this.datanote}className="white key">B</li>
+  </ol> 
 
 
 </div>
   )
  }
 }
+
 
 
 
