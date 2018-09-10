@@ -27,19 +27,20 @@ handleKeyPress = (event) => {
   for  (let i = 0; i < face.length; i++){
     face[i].addEventListener('click', function(){
       const pressed = document.getElementById('pressed');
-      pressed.name += this.name + '|';
-      console.log(pressed.name)
+      pressed.value += this.value + '|';
+      console.log(pressed.value)
       
-      if(pressed.length >= 8){      
-        if (pressed.name== 'FACE'){
+      if(pressed.length >= 1){ 
+        console.log(pressed.length)     
+        if (pressed.value== 'FACE'){
         
-            this.Redirect('/marionette');
+            this.props.history.push('/marionette');
                 }else{
-                  console.log(pressed.name)
+                  console.log(pressed.value)
         
   }
  }else{
-   console.log(pressed.name)
+   console.log(pressed.value)
  }
 })
 }
@@ -57,7 +58,7 @@ render(){
 
 
 
-const ol = {
+const ul = {
   position: "relative",
   padding: "0",
   margin: "0 0 10px",
@@ -157,26 +158,30 @@ const liEbonyActive = {
   color: "white"
 }
 
+const A = 'A';
+const F = 'F';
+const C = 'C';
+const E = 'E';
 return(
 <div className="page">
 <h1>Find My Face</h1>
 
 
-<input id='input'onChange={this.handleKeyPress} value={this.value} onChange={evt => this.updateInputValue(evt)} type='text' />
-<ol id='buttons' onClick={this.handleKeyPress}className="scale-1">
-  <li id='pressed'className="white key"name={'C'} datanote="c" >C</li>
-  <li id='pressed'datanote="cs" name={''}className="ebony key">C# D♭</li>
-  <li id='pressed'datanote="d" value={'d'}className="white key">D</li>
-  <li id='pressed'datanote="ds" value={this.datanote}className="ebony key">D# E♭</li>
-  <li id='pressed'className="white key"name={'E'} datanote="e">E</li>
-  <li id='pressed'className="white key"name={'F'}  datanote="f">F</li>
-  <li id='pressed'datanote="fs"name={this.datanote}className="ebony key">F# G♭</li>
-  <li id='pressed'datanote="g" value={this.datanote}className="white key">G</li>
-  <li id='pressed'datanote="gs" value={this.datanote}className="ebony key">G# A♭</li>
-  <li id='pressed'className="white key"name={'A'}  datanote="a">A</li>
-  <li id='pressed'datanote="as" value={this.datanote}className="ebony key">A# B♭</li>
-  <li id='pressed'datanote="b" value={this.datanote}className="white key">B</li>
-  </ol> 
+{/* <input id='input'onKeyDown={this.handleKeyPress} value={this.value} onChange={evt => this.updateInputValue(evt)} type='text' />  */}
+<ul onClick={this.handleKeyPress}className="scale-1">
+  <li id='pressed'className="white key" value='C' datanote="c" >C</li>
+  <li id='pressed'datanote="cs" value='2'className="ebony key">C# D♭</li>
+  <li id='pressed'datanote="d" className="white key">D</li>
+  <li id='pressed'datanote="ds" className="ebony key">D# E♭</li>
+  <li id='pressed'className="white key"datanote="e">E</li>
+  <li id='pressed'className="white key"  datanote="f">F</li>
+  <li id='pressed'datanote="fs"className="ebony key">F# G♭</li>
+  <li id='pressed'datanote="g" className="white key">G</li>
+  <li id='pressed'datanote="gs" className="ebony key">G# A♭</li>
+  <li id='pressed'className="white key"datanote="a">A</li>
+  <li id='pressed'datanote="as" className="ebony key">A# B♭</li>
+  <li id='pressed'datanote="b" className="white key">B</li>
+  </ul> 
 
 
 </div>
