@@ -4,11 +4,32 @@ import img from './newspaper.jpg';
 
 class Newspaper extends Component {
     
+handleKeyPress = (event) => {
+    const I = 'I';
+    const loweri = 'i';
+    if(event.key === I || event.key === loweri){
+        this.props.history.push('/keyboard');
+    }else{
+        console.log('nope')
+    }
+}
+
     render() { 
+    
+   
 
         return (  
-            <div>
-                <img src={img} />
+            <div >
+                <img 
+                className='news' 
+                src={img}
+                />
+                <input onKeyDown={this.handleKeyPress} /> 
+                
+             
+                    
+                    
+                
 
             </div>
             

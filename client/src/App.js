@@ -15,6 +15,8 @@ import { logoutUser } from './reducers/authReducer';
 import Newspaper from './components/Newspaper/index';
 import AngryNote from './components/AngryNote/index'
 import Keyboard from './components/Keyboard/Keyboard';
+import Marionette from  './components/Marionette/index';
+
 
 
 
@@ -57,7 +59,7 @@ class App extends Component {
                 <Route path="/newspaper" component={Newspaper} />
                 <Route path="/angrynote" component={AngryNote} />           
                 <Route path="/keyboard" component={Keyboard} />
-                <Route path="/marionette" component={marionette} />
+                <Route path="/marionette" component={Marionette} />
             
              </div>
                 
