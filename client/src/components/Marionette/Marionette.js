@@ -7,11 +7,12 @@ class Marionette extends Component {
 
         return (
         <div>
-            <p>Here we see evidence left at the crime scene. This song "Funeral March of a Marionette" was left at the crime scene. Could it be a message?</p>  
+            <p>"Funeral March of a Marionette" What an odd piece to have displayed under the circumstances.. lets try the Sunroom</p>  
             
-            <img className='marionette' src={img} />
+            <img className='marionette' id='angryNote' src={img} />
             
-            <button className='maronetteButton'>Next Clue</button>
+            <a href='/room'><button className='roomButton'>Sunroom</button></a>
+            
             
             
             

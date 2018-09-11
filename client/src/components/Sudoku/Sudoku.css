@@ -1,0 +1,22 @@
+#sudoku{
+    height: 300px;
+    width: 300px;
+    margin: 0  auto auto 400px;
+
+
+}
+
+.code{
+    margin-left: 450px;
+}
+
+#codeButton{
+    margin-left: 485px;
+    background-color: black;
+    color: lightgray;
+}
+
+h2{
+    color: white;
+    text-align: center;
+}
