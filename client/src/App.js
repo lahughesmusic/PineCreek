@@ -16,6 +16,16 @@ import Newspaper from './components/Newspaper/index';
 import AngryNote from './components/AngryNote/index'
 import Keyboard from './components/Keyboard/Keyboard';
 import Marionette from  './components/Marionette/index';
+import House from './components/House';
+import Livingroom from './components/Livingroom';
+import Room from './components/Room';
+import Stairs from './components/Stairs';
+import Door from './components/Door';
+import Haunted from './components/Haunted';
+import Keypad from './components/Keypad';
+import Sudoku from './components/Sudoku';
+
+
 
 
 
@@ -60,6 +70,16 @@ class App extends Component {
                 <Route path="/angrynote" component={AngryNote} />           
                 <Route path="/keyboard" component={Keyboard} />
                 <Route path="/marionette" component={Marionette} />
+                <Route path="/house" component={House} />
+                <Route path="/livingroom" component={Livingroom} />
+                <Route path="/haunted" component={Haunted} />
+                <Route path="/room" component={Room} />
+                <Route path="/door" component={Door} />
+                <Route path="/stairs" component={Stairs} />
+                <Route path="/keypad" component={Keypad} />
+                <Route path="/sudoku" component={Sudoku} />
+
+
             
              </div>
                 

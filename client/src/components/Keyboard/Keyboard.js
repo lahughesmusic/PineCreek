@@ -4,47 +4,102 @@ import { Redirect } from 'react-router-dom'
 
 
 class Keyboard extends Component {
-constructor(props){
-  super();
-  this.state = {
-   inputValue: ''
+
+  
+  state = {
+   word: ''
    
     
   };
-}
 
 
 
-updateInputValue(evt) {
-    this.setState({
-      inputValue: evt.target.value
-    });
-  }
 
-handleKeyPress = (event) => {
+// updateInputValue(evt) {
+//     this.setState({
+
+//       inputValue: evt.target.value
+//     });
+//   }
+
+// handleKeyPress = (event) => {
+//   console.log(event.target.innerHTML);
+//   const face = '';
+//   // let testLetter = event.target.options[event.target.selectedIndex].text;
+//   let letter = event.target.innerHTML;
+//  // console.log(testLetter)
+//  if(face == "FACE"){
+//    console.log('correct');
+//  }
+
+//  console.log(`letter keyed is ${letter}`);
+//  console.log(`the word guess so far is ${face}`);
+
+ handleKeyPress = (event) => {
   
-  let face = document.querySelectorAll('li')
-  for  (let i = 0; i < face.length; i++){
-    face[i].addEventListener('click', function(){
-      const pressed = document.getElementById('pressed');
-      pressed.value += this.value + '|';
-      console.log(pressed.value)
-      
-      if(pressed.length >= 1){ 
-        console.log(pressed.length)     
-        if (pressed.value== 'FACE'){
-        
-            this.props.history.push('/marionette');
-                }else{
-                  console.log(pressed.value)
-        
+  
+  let letter = event.target.innerHTML;
+
+  if (this.state.word == 'FACE'){
+    console.log('correct');
+    this.props.history.push('/house'); 
   }
- }else{
-   console.log(pressed.value)
- }
-})
+
+  this.setState({
+    word: this.state.word + letter 
+  })
+
+  
+  console.log(this.state.word)
 }
-}
+
+
+//   for  (let i = 0; i < 5; i++){
+//   face[i].addEventListener('click', function(){
+    
+//   // const pressed = document.getElementById('pressed');
+//   face.push(letter);
+//   console.log(face)
+  
+//   if(face.length >= 4){
+//   console.log(face)
+//     if (face == 'FACE'){
+  
+//   this.props.history.push('/marionette');
+//   }else{
+//   console.log(letter)
+  
+//   }
+//   }else{
+//   console.log(letter)
+//   }
+//   })
+// }
+ 
+  
+//  this.setState({
+//    [inputValue]: letter
+//  })
+  // for  (let i = 0; i < face.length; i++){
+  //   face[i].addEventListener('click', function(){
+  //     const pressed = document.getElementById('pressed');
+  //     pressed.value += this.value;
+  //     console.log(pressed.value)
+      
+  //     if(pressed.length >= 1){ 
+  //       console.log(pressed.length)     
+  //       if (pressed.value== 'F|A|C|E|'){        
+  //           this.props.history.push('/marionette');
+  //               }else{
+  //                 console.log(pressed.value)
+        
+//   // }
+//  }else{
+//    console.log(pressed.value)
+//  }
+// })
+
+
 
 
 render(){
@@ -158,36 +213,36 @@ const liEbonyActive = {
   color: "white"
 }
 
-const A = 'A';
-const F = 'F';
-const C = 'C';
-const E = 'E';
+// const A = 'A';
+// const F = 'F';
+// const C = 'C';
+// const E = 'E';
 return(
 <div className="page">
 <h1>Find My Face</h1>
 
-
 {/* <input id='input'onKeyDown={this.handleKeyPress} value={this.value} onChange={evt => this.updateInputValue(evt)} type='text' />  */}
-<ul onClick={this.handleKeyPress}className="scale-1">
-  <li id='pressed'className="white key" value='C' datanote="c" >C</li>
-  <li id='pressed'datanote="cs" value='2'className="ebony key">C# D♭</li>
+<ul className="scale-1">
+  <li onClick={this.handleKeyPress}id='pressed'className="white key"  lettername='C'datanote="c" >C</li>
+  <li onClick={this.handleKeyPress}id='pressed'datanote="cs" className="ebony key">C# D♭</li>
   <li id='pressed'datanote="d" className="white key">D</li>
   <li id='pressed'datanote="ds" className="ebony key">D# E♭</li>
-  <li id='pressed'className="white key"datanote="e">E</li>
-  <li id='pressed'className="white key"  datanote="f">F</li>
+  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='E'datanote="e">E</li>
+  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='F' datanote="f">F</li>
   <li id='pressed'datanote="fs"className="ebony key">F# G♭</li>
   <li id='pressed'datanote="g" className="white key">G</li>
   <li id='pressed'datanote="gs" className="ebony key">G# A♭</li>
-  <li id='pressed'className="white key"datanote="a">A</li>
+  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='A'datanote="a">A</li>
   <li id='pressed'datanote="as" className="ebony key">A# B♭</li>
   <li id='pressed'datanote="b" className="white key">B</li>
-  </ul> 
+</ul> 
 
 
 </div>
   )
  }
 }
+
 
 
 

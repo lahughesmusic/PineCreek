@@ -59,7 +59,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Who Are You</h1>
               <p className="lead text-center">
-                Sign in to your DevConnector account
+                Tell Us Who You Are First
               </p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
