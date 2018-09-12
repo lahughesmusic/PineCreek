@@ -7,7 +7,7 @@ body{
 
   background: -moz-linear-gradient(left, #000000 0%, #631007 41%, #6a6161 100%, #000001 100%); 
   background: -webkit-linear-gradient(left, #04172b 0%,#b02121 41%,#000000 100%,#6d0303 100%); 
-  background: linear-gradient(to right, #3a3232 0%,#410202 41%,#000000 100%,#3a0d06 100%); 
+  background: linear-gradient(to right, #000000 0%,#410202 41%,#000000 100%,#3a0d06 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
 }
 
@@ -15,6 +15,7 @@ h1{
   color: white;
   text-align: center;
   margin-top: 60px;
+  font-family: cursive;
 }
 
 img{
@@ -79,6 +80,7 @@ button{
 
 p{
   color: white;
+  font-family: cursive;
 }
 
 

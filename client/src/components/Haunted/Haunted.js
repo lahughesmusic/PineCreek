@@ -8,7 +8,7 @@ class Haunted extends Component {
 
         return (  
             <div>
-                <p>DEAR GOD ITS WORSE THAN WE THOUGHT!!! HER GHOST IS STILL HERE RRUUUUNNNNNNNNNNNNNNNNNNNNN</p>
+                <p>IT'S WORSE THAN WE THOUGHT!!! HER GHOST IS STILL HERE RRUUUUNNNNNNNNNNNNNNNNNNNNN</p>
                 <img id='haunted' src={img} />
                 <a href='/keypad'><button className='doorButton'>RUN</button></a>
 
