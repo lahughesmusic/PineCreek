@@ -6,7 +6,7 @@
 
 }
 
-.code{
+#code{
     margin-left: 450px;
 }
 
@@ -19,4 +19,13 @@
 h2{
     color: white;
     text-align: center;
+}
+
+#small{
+    font-size: 20px;
+
+}
+
+#countdown{
+    margin-left: 484px;
 }

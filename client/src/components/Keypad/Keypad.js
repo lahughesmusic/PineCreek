@@ -10,7 +10,7 @@ class Keypad extends Component {
             <div>
                 <p>When did this get here? We can't get out unless we get the password WE HAVE NO TIME!!! It looks like he left a reminder, but what does it mean? </p>
                 <img id='keypad' src={img} />
-                <a href='/sudoku'><button className='sudokuButton'>Try</button></a>
+                <a href='/sudoku'><button className='sudokuButton'>Hint</button></a>
                 
 
             </div>
