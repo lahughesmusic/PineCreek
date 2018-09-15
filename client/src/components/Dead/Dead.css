@@ -1,6 +1,11 @@
 #deadnote{
-    font-size: 50px;
+    font-size: 30px;
     color: lightgrey;
-    font-family: cursive;
+    
+  
 
+}
+
+#crossbones{
+    margin-left: 400px;
 }

@@ -8,7 +8,7 @@ handleKeyPress = (event) => {
     const I = 'I';
     const loweri = 'i';
     if(event.key === I || event.key === loweri){
-        this.props.history.push('/keyboard');
+        this.props.history.push('/house');
     }else{
         console.log('nope')
     }
@@ -24,7 +24,11 @@ handleKeyPress = (event) => {
                 className='news' 
                 src={img}
                 />
-                <input onKeyDown={this.handleKeyPress} /> 
+                <div id='one'>
+               
+        <p id='oneletter'>Ok, so we need a <br /><br />password to get more <br /><br />info Hmm... this <br /><br />appears to only <br /><br />accept one letter</p>
+                <input id="input" onKeyDown={this.handleKeyPress} /> 
+                </div>
                 
              
                     

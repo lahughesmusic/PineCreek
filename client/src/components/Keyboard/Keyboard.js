@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Keyboard.css';
 import { Redirect } from 'react-router-dom'
+import img from './keyboard.png'
 
 
 class Keyboard extends Component {
@@ -8,8 +9,6 @@ class Keyboard extends Component {
   
   state = {
    word: ''
-   
-    
   };
 
 
@@ -40,15 +39,27 @@ class Keyboard extends Component {
   
   let letter = event.target.innerHTML;
 
-  if (this.state.word == 'FACE'){
-    console.log('correct');
-    this.props.history.push('/house'); 
-  }
-
   this.setState({
     word: this.state.word + letter 
   })
 
+  if(this.state.word == 'FAC' && letter == 'E') { 
+    this.props.history.push('/secretdoor'); 
+  }
+
+  if(this.state.word == 'FACE') {
+    console.log('correct');
+    this.props.history.push('/secretdoor'); 
+  } else {
+    console.log('Almost there: '); 
+    console.log(this.state.word); 
+  }
+
+  /**
+  this.setState({
+    word: this.state.word + letter 
+  })
+  **/
   
   console.log(this.state.word)
 }
@@ -219,20 +230,24 @@ const liEbonyActive = {
 // const E = 'E';
 return(
 <div className="page">
-<h1>Find My Face</h1>
+<br />
+<p id='musicnote'>hmm.. there's a note in <br /><br />place of music here. What <br /><br />could it mean?</p>
+<img id='wordface' src={img} />
+<br />
+<br />
 
 {/* <input id='input'onKeyDown={this.handleKeyPress} value={this.value} onChange={evt => this.updateInputValue(evt)} type='text' />  */}
 <ul className="scale-1">
-  <li onClick={this.handleKeyPress}id='pressed'className="white key"  lettername='C'datanote="c" >C</li>
-  <li onClick={this.handleKeyPress}id='pressed'datanote="cs" className="ebony key">C# D♭</li>
+  <li onClick={this.handleKeyPress}id='pressed' className="white key"  lettername='C' datanote="c" >C</li>
+  <li onClick={this.handleKeyPress}id='pressed' datanote="cs" className="ebony key">C# D♭</li>
   <li id='pressed'datanote="d" className="white key">D</li>
   <li id='pressed'datanote="ds" className="ebony key">D# E♭</li>
-  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='E'datanote="e">E</li>
-  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='F' datanote="f">F</li>
-  <li id='pressed'datanote="fs"className="ebony key">F# G♭</li>
+  <li onClick={this.handleKeyPress}id='pressed' className="white key" lettername='E' datanote="e">E</li>
+  <li onClick={this.handleKeyPress}id='pressed' className="white key" lettername='F' datanote="f">F</li>
+  <li id='pressed'datanote="fs" className="ebony key">F# G♭</li>
   <li id='pressed'datanote="g" className="white key">G</li>
   <li id='pressed'datanote="gs" className="ebony key">G# A♭</li>
-  <li onClick={this.handleKeyPress}id='pressed'className="white key" lettername='A'datanote="a">A</li>
+  <li onClick={this.handleKeyPress}id='pressed' className="white key" lettername='A' datanote="a">A</li>
   <li id='pressed'datanote="as" className="ebony key">A# B♭</li>
   <li id='pressed'datanote="b" className="white key">B</li>
 </ul> 

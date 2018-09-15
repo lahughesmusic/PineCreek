@@ -17,6 +17,7 @@ const TextFieldGroup = ({
         <div>
                 <div className='form-group'>
                         <input
+                        id='lightgrey'
                         type={type}
                         className={classnames('form-control form-control-lg', {
                             'is-invalid': error
