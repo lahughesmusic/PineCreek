@@ -25,6 +25,7 @@ import Haunted from './components/Haunted';
 import Keypad from './components/Keypad';
 import Sudoku from './components/Sudoku';
 import Dead from './components/Dead'
+import Secretdoor from './components/Secretdoor'
 
 
 
@@ -80,13 +81,15 @@ class App extends Component {
                 <Route path="/keypad" component={Keypad} />
                 <Route path="/sudoku" component={Sudoku} />
                 <Route path="/dead" component={Dead} />
+                <Route path="/secretdoor" component={Secretdoor} />
+                
 
 
             
              </div>
                 
 
-                <Footer />
+                
             </div>  
             </Router>  
             </Provider>

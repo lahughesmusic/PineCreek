@@ -11,7 +11,7 @@ class Livingroom extends Component {
             
             <img className='livingRoom' id='livingRoom' src={img} />
             
-            <a href='/marionette'><button className='livingRoomButton'>Investigate</button></a>
+            <a href='/keyboard'><button className='livingRoomButton'>Investigate</button></a>
             
             
             

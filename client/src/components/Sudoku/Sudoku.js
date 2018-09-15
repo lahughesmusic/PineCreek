@@ -49,12 +49,15 @@ class Sudoku extends Component {
                 
                 <img id='sudoku' src={img} />
                 <br />
-                <h1 id='small'>It looks like the code needs 4 numbers!</h1>
-                <h2 id='small'>Don't turn around now but she's right behind us, someone is ANGRY. He was right, she did need to be killed sheesh.</h2>
+                <p id='small'>It looks like the code needs 4 numbers!</p>
+                <p id='small'>Don't turn around now but she's right behind us, HURRY! Demon Ghost is ANGRY. He was right, she did need to be killed sheesh.</p>
+                <div id='count'>
+                <p></p>
                 <Countdown 
                 id='countdown' 
                 date={Date.now() + 30000}
                 renderer={renderer} />
+                </div>
                 <br />
                 <input  
                 id='code'

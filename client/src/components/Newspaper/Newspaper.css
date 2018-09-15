@@ -6,5 +6,21 @@ body{
     height: 550px;
     width: 400px;
     margin: 0 auto;
+    float: left;
 }
 
+#input{
+    margin-left: 270px;
+    border-radius: .5em;
+
+}
+
+#oneletter{
+    color: lightgrey;
+    font-size: 50px;
+}
+
+#one{
+    margin-left: 500px;
+    margin-top: 50px;
+}

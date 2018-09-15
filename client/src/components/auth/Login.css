@@ -2,3 +2,14 @@
     background-color: black!important;
     color: white!important;
 }
+
+h1{
+    color: lightgrey!important;
+    
+}
+
+#lightgrey{
+    background-color: lightgrey;
+    color: black;
+    border: black solid 1px;
+}

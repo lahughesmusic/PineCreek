@@ -19,13 +19,25 @@
 h2{
     color: white;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: lighter;
 }
 
 #small{
     font-size: 20px;
+    text-align: center;
+    
+  
 
 }
 
 #countdown{
     margin-left: 484px;
+}
+
+#count{
+    background-color: black;
+    color: lightgrey;
+    width: 100px;
+    border: lightgrey solid 1px;
 }
