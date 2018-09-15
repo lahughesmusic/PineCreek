@@ -26,8 +26,10 @@ import Keypad from './components/Keypad';
 import Sudoku from './components/Sudoku';
 import Dead from './components/Dead'
 import Secretdoor from './components/Secretdoor'
-
-
+import Free from './components/Free';
+import Run from './components/Run';
+import Help from './components/Help';
+import Asylum from './components/Asylum';
 
 
 
@@ -82,6 +84,11 @@ class App extends Component {
                 <Route path="/sudoku" component={Sudoku} />
                 <Route path="/dead" component={Dead} />
                 <Route path="/secretdoor" component={Secretdoor} />
+                <Route path="/free" component={Free} />
+                <Route path="/run" component={Run} />
+                <Route path="/help" component={Help} />
+                <Route path="/asylum" component={Asylum} />
+
                 
 
 
