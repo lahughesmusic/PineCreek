@@ -51,9 +51,9 @@ app.get('*', (req, res) => {
 
 
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 2000;
 
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(process.env.PORT, () => console.log(`Server running on port ${port}`));
 
  
