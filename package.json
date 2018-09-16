@@ -2,6 +2,8 @@
   "name": "pinecreekcasefiles",
   "version": "0.1.0",
   "private": true,
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
@@ -24,7 +26,8 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js"
-}
 
+"devDependencies": {
+  "nodemon": "^1.17.3"
+}
+}
