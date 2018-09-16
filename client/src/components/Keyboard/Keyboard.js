@@ -132,10 +132,13 @@ const ul = {
 }
 
 
-
+// eslint-disable-next-line
 const h1bh2b = {
+  // eslint-disable-next-line
   color: "#640000",
+  // eslint-disable-next-line
   textShadow: "0px 1px 5px #CCC"
+  // eslint-disable-next-line
 
 }
 
@@ -161,6 +164,7 @@ const li = {
     margin: "0",
     display: "inline-block",
     border: "1px solid #ccc",
+    // eslint-disable-next-line
     padding: "220px 15px 50px",
     borderRadius: "0 0 5px 5px",
     boxShadow: "0 5px 5px #aaa",
@@ -237,7 +241,7 @@ const liEbonyHover = {
   color: "gainsboro"
   // eslint-disable-next-line
 }
-
+// eslint-disable-next-line
 const liEbonyActive = {
   // eslint-disable-next-line
   background: "url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVmNjI2NSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMTUxYjE5Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMTcxYzFhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g')",
