@@ -11,6 +11,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
+    "eslint-cli": "^1.1.1",
     "express": "^4.16.3",
     "foobar": "^1.1.0",
     "jsonwebtoken": "^8.3.0",
