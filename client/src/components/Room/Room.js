@@ -9,7 +9,7 @@ class Room extends Component {
         <div>
             <p>Maybe we should check for documents.. oh what's this?</p>  
             
-            <img className='sunroom' id='sunRoom' src={img} />
+            <img alt='alt'className='sunroom' id='sunRoom' src={img} />
             
             <a href='/angrynote'><button className='angrynoteButton'>Read</button></a>
             

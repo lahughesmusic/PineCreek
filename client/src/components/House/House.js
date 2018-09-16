@@ -9,7 +9,7 @@ class House extends Component {
         <div>
             <p>I think Ricky Wells lives here, Do we dare enter the house?</p>  
             
-            <img className='House' id='house' src={img} />
+            <img alt='alt' className='House' id='house' src={img} />
             
             <a href='/livingroom'><button className='livingRoomButton'>Enter House</button></a>
             

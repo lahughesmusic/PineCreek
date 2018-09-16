@@ -9,7 +9,7 @@ class Dead extends Component {
 
         return (  
             <div>
-                <img  id='crossbones' src={img} />
+                <img alt='alt' id='crossbones' src={img} />
                 <p id='deadnote'>You have "passed away" Cause of Death: DEMON GHOST
                 <br />
                 <br />Ricky Wells was right, 

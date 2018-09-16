@@ -9,7 +9,7 @@ class Stairs extends Component {
         return (  
             <div>
                 <p>Were the stairs this creepy a second ago? Well, here goes nothing</p>
-                <img id='stairs' src={img} />
+                <img alt='alt' id='stairs' src={img} />
                 <a href='/door'><button className='doorButton'>Climb</button></a>
 
             </div>

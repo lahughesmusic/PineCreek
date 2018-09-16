@@ -9,7 +9,7 @@ class Livingroom extends Component {
         <div>
             <p>Hmmm... what's that on the piano over there?</p>  
             
-            <img className='livingRoom' id='livingRoom' src={img} />
+            <img alt='room'className='livingRoom' id='livingRoom' src={img} />
             
             <a href='/keyboard'><button className='livingRoomButton'>Investigate</button></a>
             

@@ -11,7 +11,7 @@ class Secretdoor extends Component {
         return (  
             <div >
                 <h1>Whoa what was that?! Is that a secret door?</h1>
-                <img id='secretdoor'src={img} />
+                <img alt='alt' id='secretdoor'src={img} />
                 <a href='/room'><button className='livingRoomButton'>Let's go!</button></a>
                
            

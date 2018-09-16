@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown-now';
 import "./Sudoku.css";
 import img from './sudoku.png';
@@ -47,7 +46,7 @@ class Sudoku extends Component {
         return (  
             <div>
                 
-                <img id='sudoku' src={img} />
+                <img alt='alt' id='sudoku' src={img} />
                 <br />
                 <p id='small'>It looks like the code needs 4 numbers!</p>
                 <p id='small'>Don't turn around now but she's right behind us, HURRY! Demon Ghost is ANGRY. He was right, she did need to be killed sheesh.</p>

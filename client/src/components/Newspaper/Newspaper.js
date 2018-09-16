@@ -21,6 +21,7 @@ handleKeyPress = (event) => {
         return (  
             <div >
                 <img 
+                alt='alt'
                 className='news' 
                 src={img}
                 />

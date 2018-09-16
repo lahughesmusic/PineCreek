@@ -9,7 +9,7 @@ class Door extends Component {
         return (  
             <div>
                 <p>Dear God, why does everything suddenly look like the set of a horror movie? Are we doing this?</p>
-                <img id='door' src={img} />
+                <img alt='alt' id='door' src={img} />
                 <a href='/haunted'><button className='haunted'>Open Door</button></a>
 
             </div>
