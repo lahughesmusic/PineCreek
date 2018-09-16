@@ -25,7 +25,6 @@
     "client-install": "npm install --prefix client",
     "start": "node index.js",
     "index": "nodemon index.js",
-    "build": "react-scripts build",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run index\" \"npm run client\"",
     "heroku-prebuild": "cd client && npm install",
