@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const path = require('path')
+const path = require('path');
 // const passport = require('passport');
 
 const users = require('./routes/api/users');
@@ -45,7 +45,7 @@ if(process.env.NODE_ENV === 'production'){
 
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
- })
+ });
 }
 
 
@@ -54,6 +54,6 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 2000;
 
 
-app.listen(process.env.PORT, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
  
