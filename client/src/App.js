@@ -5,7 +5,7 @@ import Landing from './components/layout/Landing'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 import { Provider } from 'react-redux'
-import store from './store'
+import configureStore from './store'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -31,6 +31,7 @@ import Help from './components/Help';
 import Asylum from './components/Asylum';
 
 
+const store = configureStore();
 
 
 //check for token
