@@ -7,7 +7,7 @@ class House extends Component {
 
         return (
         <div>
-            <p>I think Ricky Wells lives here, Do we dare enter the house?</p>  
+            <p id='text'>I think Ricky Wells lives here, Do we dare enter the house?</p>  
             
             <img alt='alt' className='House' id='house' src={img} />
             

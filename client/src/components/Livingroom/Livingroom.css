@@ -4,4 +4,7 @@
     width: 650px;
     margin: 0  auto auto 100px;
 }
-
+#text{
+font-size: 40px;
+line-height: 100%;
+}

@@ -10,7 +10,7 @@ class Secretdoor extends Component {
 
         return (  
             <div >
-                <h1>Whoa what was that?! Is that a secret door?</h1>
+                <p id='secretdoortext'>Whoa what was that?! Is that a secret door?</p>
                 <img alt='alt' id='secretdoor'src={img} />
                 <a href='/room'><button className='livingRoomButton'>Let's go!</button></a>
                

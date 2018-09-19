@@ -1,0 +1,10 @@
+#cop{
+    color: blue;
+}
+
+.runtext{
+    font-size: 20px;
+    line-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+
+}

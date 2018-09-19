@@ -3,3 +3,9 @@
     width: 40%;
     margin: 0  auto auto 300px;
 }
+
+#angrynotetext{
+    font-size: 40px;
+    line-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}

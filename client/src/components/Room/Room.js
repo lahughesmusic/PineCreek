@@ -7,7 +7,7 @@ class Room extends Component {
 
         return (
         <div>
-            <p>Maybe we should check for documents.. oh what's this?</p>  
+            <p id='roomtext'>Maybe we should check for documents.. oh what's this?</p>  
             
             <img alt='alt'className='sunroom' id='sunRoom' src={img} />
             

@@ -1,5 +1,11 @@
 #keypad{
     height: 400px;
-    width: 400px;
-    margin-left: 100px;
+    width: 450px;
+    margin-left: 75px;
+}
+
+#keypadtext{
+    font-size: 40px;
+    line-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
 }

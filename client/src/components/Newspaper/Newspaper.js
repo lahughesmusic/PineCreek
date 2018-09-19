@@ -27,7 +27,7 @@ handleKeyPress = (event) => {
                 />
                 <div id='one'>
                
-        <p id='oneletter'>Ok, so we need a <br /><br />password to get more <br /><br />info Hmm... this <br /><br />appears to only <br /><br />accept one letter</p>
+        <p id='oneletter'>Ok, so we need a password to get more info Hmm... this appears to only accept one letter</p>
                 <input id="input" onKeyDown={this.handleKeyPress} /> 
                 </div>
                 

@@ -20,7 +20,7 @@ import Livingroom from './components/Livingroom';
 import Room from './components/Room';
 import Stairs from './components/Stairs';
 import Door from './components/Door';
-import Haunted from './components/Haunted';
+import Haunted from './components/Haunted'; 
 import Keypad from './components/Keypad';
 import Sudoku from './components/Sudoku';
 import Dead from './components/Dead'

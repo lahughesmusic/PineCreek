@@ -8,7 +8,7 @@ class AngryNote extends Component {
 
         return (  
             <div>
-                <p>Well this is creepy. I think we're on to something though, I wonder what's upstairs...</p>
+                <p id='angrynotetext'>Well this is creepy. I think we're on to something though, I wonder what's upstairs...</p>
                 <img alt='alt' id='angryNote' src={img} />
                 <a href='/stairs'><button className='stairs'>Staircase</button></a>
                 

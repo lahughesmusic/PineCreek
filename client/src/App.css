@@ -65,7 +65,7 @@ button{
 #report{
   color: white;
   text-align: left;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: lighter;
   font-size: 15px;
 }

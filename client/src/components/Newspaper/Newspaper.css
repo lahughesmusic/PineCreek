@@ -18,9 +18,12 @@ body{
 #oneletter{
     color: lightgrey;
     font-size: 50px;
+    line-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
-#one{
+/* #one{
     margin-left: 500px;
     margin-top: 50px;
-}
+} */
